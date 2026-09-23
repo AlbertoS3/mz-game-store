@@ -2,10 +2,18 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <meta name="theme-color" content="#071b2d">
-  <meta name="description" content="LinkWords — Veja, Ligue e Aprenda">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+  >
+
+  <meta name="theme-color" content="#071525">
+
+  <meta
+    name="description"
+    content="LinkWords — Veja, Ligue e Aprenda"
+  >
 
   <title>LinkWords — Veja • Ligue • Aprenda</title>
 
@@ -14,273 +22,438 @@
 
 <body>
 
-  <div id="app">
+  <!-- =====================================
+       SPLASH SCREEN
+  ====================================== -->
 
-    <!-- CABEÇALHO -->
-    <header class="topbar">
+  <div id="splash">
 
-      <div class="brand" onclick="showScreen('home')">
-        <span class="logo">💡</span>
-        <span>Link<span>Words</span></span>
+    <div class="splash-background"></div>
+
+    <div class="splash-content">
+
+      <div class="logo-mark">
+        💡
       </div>
 
-      <div class="stats">
-        <span>⭐ <b id="xpTop">0</b></span>
-        <span>🪙 <b id="coinsTop">0</b></span>
+      <h1>
+        Link<span>Words</span>
+      </h1>
+
+      <p>
+        Veja • Ligue • Aprenda
+      </p>
+
+      <div class="loading-area">
+
+        <div class="loading-track">
+          <div id="loadingBar"></div>
+        </div>
+
+        <small id="loadingText">
+          Preparando seu aprendizado...
+        </small>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================
+       APLICAÇÃO
+  ====================================== -->
+
+  <div id="app">
+
+    <!-- FUNDO PRINCIPAL -->
+
+    <div class="app-background"></div>
+
+
+    <!-- ===================================
+         TOPO
+    ==================================== -->
+
+    <header class="topbar">
+
+      <button
+        class="brand"
+        onclick="showScreen('home')"
+      >
+
+        <span class="brand-icon">
+          💡
+        </span>
+
+        <span class="brand-name">
+          Link<span>Words</span>
+        </span>
+
+      </button>
+
+
+      <div class="top-progress">
+
+        <div class="stat">
+
+          <span class="stat-icon">
+            ⭐
+          </span>
+
+          <div>
+
+            <small>
+              XP
+            </small>
+
+            <strong id="xpTop">
+              0
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <div class="stat">
+
+          <span class="stat-icon">
+            🪙
+          </span>
+
+          <div>
+
+            <small>
+              Pontos
+            </small>
+
+            <strong id="coinsTop">
+              50
+            </strong>
+
+          </div>
+
+        </div>
+
       </div>
 
     </header>
 
 
+    <!-- ===================================
+         CONTEÚDO
+    ==================================== -->
+
     <main>
 
-      <!-- =========================
-           TELA INICIAL
-      ========================== -->
 
-      <section id="home" class="screen active">
+      <!-- =================================
+           INÍCIO
+      ================================== -->
 
-        <div class="hero">
+      <section
+        id="home"
+        class="screen active"
+      >
 
-          <div class="hero-art">🧠</div>
+        <div class="welcome">
 
-          <h1>Veja • Ligue • Aprenda</h1>
+          <span class="eyebrow">
+            APRENDIZAGEM INTELIGENTE
+          </span>
+
+          <h1>
+            Aprenda algo novo
+            <span>todos os dias.</span>
+          </h1>
 
           <p>
-            Aprenda palavras e conceitos
-            através de associações visuais.
+            Explore imagens, palavras e conceitos
+            através de associações simples.
           </p>
 
+        </div>
+
+
+        <!-- CONTINUAÇÃO -->
+
+        <div class="continue-card">
+
+          <div class="continue-image">
+            🧠
+          </div>
+
+          <div class="continue-info">
+
+            <span>
+              CONTINUAR APRENDENDO
+            </span>
+
+            <h2 id="continueCategory">
+              Família
+            </h2>
+
+            <p>
+              Relações e pessoas
+            </p>
+
+            <div class="mini-progress">
+
+              <div
+                id="continueProgress"
+                style="width:35%"
+              ></div>
+
+            </div>
+
+          </div>
+
+
           <button
-            class="primary"
-            onclick="showScreen('categories')">
-            Começar
+            class="circle-button"
+            onclick="continueLearning()"
+          >
+            →
           </button>
 
         </div>
 
 
-        <!-- DESAFIO DO DIA -->
+        <!-- CATEGORIAS -->
 
-        <div class="daily card">
+        <div class="section-heading">
 
           <div>
 
-            <span class="eyebrow">
-              🎯 DESAFIO DO DIA
+            <span>
+              EXPLORE
             </span>
 
             <h2>
-              Complete 3 desafios
+              O que você quer aprender?
             </h2>
-
-            <p>
-              Ganhe +50 XP e +30 moedas.
-            </p>
 
           </div>
 
           <button
-            class="small-btn"
-            onclick="startDaily()">
-            Jogar
+            onclick="showScreen('categories')"
+          >
+            Ver tudo
           </button>
 
         </div>
 
 
-        <h2 class="section-title">
-          Continuar aprendendo
-        </h2>
-
-
         <div
           id="homeCategories"
-          class="category-grid">
+          class="visual-category-grid"
+        ></div>
+
+
+        <!-- RECOMENDADO -->
+
+        <div class="featured-learning">
+
+          <div class="featured-overlay">
+
+            <span class="eyebrow">
+              RECOMENDADO PARA VOCÊ
+            </span>
+
+            <h2>
+              Descubra o mundo
+              ao seu redor 🌍
+            </h2>
+
+            <p>
+              Aprenda sobre lugares,
+              natureza e diferentes culturas.
+            </p>
+
+            <button
+              class="primary-button"
+              onclick="openCategory('geography')"
+            >
+              Explorar conteúdo
+            </button>
+
+          </div>
+
         </div>
 
       </section>
 
 
-
-      <!-- =========================
+      <!-- =================================
            CATEGORIAS
-      ========================== -->
+      ================================== -->
 
       <section
         id="categories"
-        class="screen">
+        class="screen"
+      >
 
-        <div class="screen-head">
+        <div class="page-header">
 
-          <div>
-
-            <span class="eyebrow">
-              APRENDIZAGEM
-            </span>
-
-            <h1>
-              Categorias
-            </h1>
-
-          </div>
-
-          <span class="pill">
-            18 categorias
+          <span class="eyebrow">
+            APRENDER
           </span>
+
+          <h1>
+            Categorias
+          </h1>
+
+          <p>
+            Escolha uma área e comece
+            a descobrir novos conhecimentos.
+          </p>
 
         </div>
 
 
         <div
           id="categoryList"
-          class="category-list">
-        </div>
+          class="full-category-grid"
+        ></div>
 
       </section>
 
 
-
-      <!-- =========================
-           NÍVEIS
-      ========================== -->
+      <!-- =================================
+           NÍVEIS DE APRENDIZAGEM
+      ================================== -->
 
       <section
         id="levels"
-        class="screen">
+        class="screen"
+      >
 
         <button
-          class="back"
-          onclick="showScreen('categories')">
-
-          ‹ Categorias
-
+          class="back-button"
+          onclick="showScreen('categories')"
+        >
+          ← Categorias
         </button>
 
 
         <div id="levelHeader"></div>
 
 
-        <div
-          id="levelList"
-          class="level-list">
+        <div class="learning-path">
+
+          <div
+            id="levelList"
+            class="level-list"
+          ></div>
+
         </div>
 
       </section>
 
 
-
-      <!-- =========================
-           JOGO
-      ========================== -->
+      <!-- =================================
+           LIÇÃO
+      ================================== -->
 
       <section
-        id="game"
-        class="screen">
+        id="lesson"
+        class="screen"
+      >
 
-        <div class="game-head">
+        <div class="lesson-top">
 
           <button
-            class="back"
-            onclick="showScreen('levels')">
-
-            ‹ Voltar
-
+            class="back-button"
+            onclick="showScreen('levels')"
+          >
+            ← Voltar
           </button>
 
-
-          <span id="gameProgress">
-            1/5
-          </span>
-
-
-          <span>
-            ❤️❤️❤️
+          <span id="lessonProgress">
+            1 de 5
           </span>
 
         </div>
 
 
-        <!-- BARRA DE PROGRESSO -->
+        <div class="lesson-progress">
 
-        <div class="progress">
-
-          <div id="progressBar"></div>
+          <div id="lessonProgressBar"></div>
 
         </div>
 
 
-        <!-- PERGUNTA -->
+        <div id="lessonContent"></div>
 
-        <div id="question"></div>
-
-
-        <!-- RESPOSTAS -->
 
         <div
-          id="answers"
-          class="answers">
-        </div>
+          id="lessonOptions"
+          class="lesson-options"
+        ></div>
 
-
-        <!-- MENSAGEM -->
 
         <div
-          id="gameMessage"
-          class="game-message">
-        </div>
+          id="lessonExplanation"
+          class="lesson-explanation"
+        ></div>
 
-
-        <!-- PRÓXIMA PERGUNTA -->
 
         <button
-          id="nextBtn"
-          class="primary hidden"
-          onclick="nextQuestion()">
-
+          id="lessonNext"
+          class="primary-button lesson-next hidden"
+          onclick="nextLesson()"
+        >
           Continuar
-
         </button>
 
       </section>
 
 
-
-      <!-- =========================
-           RESULTADO
-      ========================== -->
+      <!-- =================================
+           RESULTADO DA LIÇÃO
+      ================================== -->
 
       <section
         id="result"
-        class="screen">
+        class="screen"
+      >
 
-        <div class="result-card">
+        <div class="result-container">
 
-          <div class="celebrate">
-            🎉
+          <div class="result-icon">
+            ✨
           </div>
 
+          <span class="eyebrow">
+            APRENDIZAGEM CONCLUÍDA
+          </span>
 
-          <h1 id="resultTitle">
-            Parabéns!
+          <h1>
+            Muito bem!
           </h1>
 
+          <p id="resultText">
+            Você concluiu esta etapa
+            de aprendizagem.
+          </p>
 
-          <p id="resultText"></p>
 
-
-          <div class="reward-row">
+          <div class="knowledge-earned">
 
             <div>
 
-              ⭐
+              <span>
+                ⭐
+              </span>
 
-              <b id="resultXP">
-                0
-              </b>
+              <strong id="resultXP">
+                +0
+              </strong>
 
               <small>
-                XP
+                XP adquirido
               </small>
 
             </div>
@@ -288,14 +461,16 @@
 
             <div>
 
-              🪙
+              <span>
+                🪙
+              </span>
 
-              <b id="resultCoins">
-                0
-              </b>
+              <strong id="resultCoins">
+                +0
+              </strong>
 
               <small>
-                moedas
+                pontos
               </small>
 
             </div>
@@ -304,20 +479,18 @@
 
 
           <button
-            class="primary"
-            onclick="showScreen('categories')">
-
-            Continuar
-
+            class="primary-button"
+            onclick="showScreen('categories')"
+          >
+            Continuar aprendendo
           </button>
 
 
           <button
-            class="secondary"
-            onclick="replayLevel()">
-
-            Rever
-
+            class="secondary-button"
+            onclick="replayLevel()"
+          >
+            Rever conteúdo
           </button>
 
         </div>
@@ -325,68 +498,176 @@
       </section>
 
 
+      <!-- =================================
+           PROGRESSO
+      ================================== -->
 
-      <!-- =========================
+      <section
+        id="progress"
+        class="screen"
+      >
+
+        <div class="page-header">
+
+          <span class="eyebrow">
+            SEU APRENDIZADO
+          </span>
+
+          <h1>
+            Meu progresso
+          </h1>
+
+          <p>
+            Veja quanto conhecimento
+            você já explorou.
+          </p>
+
+        </div>
+
+
+        <div class="progress-overview">
+
+          <div class="progress-circle">
+
+            <strong id="overallProgress">
+              0%
+            </strong>
+
+            <small>
+              concluído
+            </small>
+
+          </div>
+
+
+          <div class="progress-details">
+
+            <div>
+              <strong id="completedCount">
+                0
+              </strong>
+
+              <span>
+                lições
+              </span>
+            </div>
+
+
+            <div>
+              <strong id="learningXP">
+                0
+              </strong>
+
+              <span>
+                XP
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <h2 class="subsection-title">
+          Áreas exploradas
+        </h2>
+
+
+        <div
+          id="progressCategories"
+          class="progress-category-list"
+        ></div>
+
+      </section>
+
+
+      <!-- =================================
            CONQUISTAS
-      ========================== -->
+      ================================== -->
 
       <section
         id="achievements"
-        class="screen">
+        class="screen"
+      >
 
-        <div class="screen-head">
+        <div class="page-header">
 
-          <div>
+          <span class="eyebrow">
+            MARCOS DE APRENDIZAGEM
+          </span>
 
-            <span class="eyebrow">
-              PROGRESSO
-            </span>
+          <h1>
+            Conquistas
+          </h1>
 
-            <h1>
-              Conquistas
-            </h1>
-
-          </div>
+          <p>
+            Pequenos marcos que mostram
+            sua evolução.
+          </p>
 
         </div>
 
 
         <div
           id="achievementList"
-          class="achievement-grid">
-        </div>
+          class="achievement-grid"
+        ></div>
 
       </section>
 
 
-
-      <!-- =========================
+      <!-- =================================
            PERFIL
-      ========================== -->
+      ================================== -->
 
       <section
         id="profile"
-        class="screen">
+        class="screen"
+      >
 
+        <div class="profile-hero">
 
-        <div class="profile-card">
-
-          <div class="avatar">
+          <div class="profile-avatar">
             👤
           </div>
-
 
           <h1>
             Br 🇲🇿
           </h1>
 
-
           <p>
-            Nível
-            <b id="profileLevel">
-              1
-            </b>
+            Explorador do conhecimento
           </p>
+
+          <div class="profile-level">
+            Nível
+            <strong id="profileLevel">
+              1
+            </strong>
+          </div>
+
+        </div>
+
+
+        <div class="profile-xp-card">
+
+          <div class="xp-label">
+
+            <span>
+              Progresso para o próximo nível
+            </span>
+
+            <strong>
+              <span id="profileXP">
+                0
+              </span>
+              /
+              <span id="profileNextXP">
+                500
+              </span>
+            </strong>
+
+          </div>
 
 
           <div class="xp-track">
@@ -395,171 +676,77 @@
 
           </div>
 
-
-          <small>
-
-            <span id="profileXP">
-              0
-            </span>
-
-            /
-
-            <span id="profileNextXP">
-              500
-            </span>
-
-            XP
-
-          </small>
-
         </div>
 
 
-
-        <!-- ESTATÍSTICAS -->
-
-        <div class="profile-stats">
+        <div class="profile-stat-grid">
 
           <div>
+            <strong id="profileCoins">
+              50
+            </strong>
 
-            🔥
+            <span>
+              🪙 Pontos
+            </span>
+          </div>
 
-            <b id="streak">
+
+          <div>
+            <strong id="streak">
               1
-            </b>
+            </strong>
 
-            <small>
-              dias
-            </small>
-
+            <span>
+              🔥 Dias ativos
+            </span>
           </div>
 
 
           <div>
-
-            🪙
-
-            <b id="profileCoins">
+            <strong id="achievementCount">
               0
-            </b>
+            </strong>
 
-            <small>
-              moedas
-            </small>
-
-          </div>
-
-
-          <div>
-
-            🏆
-
-            <b id="achievementCount">
-              0
-            </b>
-
-            <small>
-              conquistas
-            </small>
-
+            <span>
+              🏆 Marcos
+            </span>
           </div>
 
         </div>
 
 
-
-        <!-- OPÇÕES DO PERFIL -->
-
-        <div class="menu-card">
+        <div class="settings-card">
 
           <button>
-
-            📊 Meu progresso
-
-            <span>
-              ›
-            </span>
-
+            <span>🌐</span>
+            <div>
+              <strong>Idioma</strong>
+              <small>Português</small>
+            </div>
+            <b>›</b>
           </button>
 
 
           <button>
-
-            🌍 Idioma principal
-
-            <span>
-              Português
-            </span>
-
+            <span>⚙️</span>
+            <div>
+              <strong>Configurações</strong>
+              <small>Preferências do app</small>
+            </div>
+            <b>›</b>
           </button>
 
 
           <button>
-
-            ⚙️ Configurações
-
-            <span>
-              ›
-            </span>
-
+            <span>❓</span>
+            <div>
+              <strong>Ajuda</strong>
+              <small>Como funciona o LinkWords</small>
+            </div>
+            <b>›</b>
           </button>
 
-
-          <button>
-
-            ❓ Ajuda e suporte
-
-            <span>
-              ›
-            </span>
-
-          </button>
-
-        </div>
-
-      </section>
-
-
-
-      <!-- =========================
-           LOJA
-      ========================== -->
-
-      <section
-        id="shop"
-        class="screen">
-
-        <div class="screen-head">
-
-          <div>
-
-            <span class="eyebrow">
-              RECOMPENSAS
-            </span>
-
-            <h1>
-              Loja
-            </h1>
-
-          </div>
-
-
-          <span class="pill">
-
-            🪙
-
-            <b id="shopCoins">
-              0
-            </b>
-
-          </span>
-
-        </div>
-
-
-        <div
-          id="shopList"
-          class="shop-list">
         </div>
 
       </section>
@@ -567,20 +754,21 @@
     </main>
 
 
-
-    <!-- =========================
+    <!-- ===================================
          MENU INFERIOR
-    ========================== -->
+    ==================================== -->
 
     <nav class="bottom-nav">
-
 
       <button
         class="nav-btn active"
         data-screen="home"
-        onclick="showScreen('home')">
+        onclick="showScreen('home')"
+      >
 
-        ⌂
+        <span>
+          ⌂
+        </span>
 
         <small>
           Início
@@ -589,58 +777,66 @@
       </button>
 
 
-
       <button
         class="nav-btn"
         data-screen="categories"
-        onclick="showScreen('categories')">
+        onclick="showScreen('categories')"
+      >
 
-        ▦
+        <span>
+          ◈
+        </span>
 
         <small>
-          Categorias
+          Aprender
         </small>
 
       </button>
 
+
+      <button
+        class="nav-btn"
+        data-screen="progress"
+        onclick="showScreen('progress')"
+      >
+
+        <span>
+          ◒
+        </span>
+
+        <small>
+          Progresso
+        </small>
+
+      </button>
 
 
       <button
         class="nav-btn"
         data-screen="achievements"
-        onclick="showScreen('achievements')">
+        onclick="showScreen('achievements')"
+      >
 
-        🏆
+        <span>
+          ✦
+        </span>
 
         <small>
-          Conquistas
+          Marcos
         </small>
 
       </button>
-
-
-
-      <button
-        class="nav-btn"
-        data-screen="shop"
-        onclick="showScreen('shop')">
-
-        🛒
-
-        <small>
-          Loja
-        </small>
-
-      </button>
-
 
 
       <button
         class="nav-btn"
         data-screen="profile"
-        onclick="showScreen('profile')">
+        onclick="showScreen('profile')"
+      >
 
-        👤
+        <span>
+          ◯
+        </span>
 
         <small>
           Perfil
@@ -653,7 +849,9 @@
   </div>
 
 
-  <!-- JAVASCRIPT -->
+  <!-- =====================================
+       JAVASCRIPT
+  ====================================== -->
 
   <script src="script.js"></script>
 
