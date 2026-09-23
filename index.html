@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <meta name="theme-color" content="#071b2d">
+  <meta name="description" content="LinkWords — Veja, Ligue e Aprenda">
+
+  <title>LinkWords — Veja • Ligue • Aprenda</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="app">
+
+    <!-- CABEÇALHO -->
+    <header class="topbar">
+
+      <div class="brand" onclick="showScreen('home')">
+        <span class="logo">💡</span>
+        <span>Link<span>Words</span></span>
+      </div>
+
+      <div class="stats">
+        <span>⭐ <b id="xpTop">0</b></span>
+        <span>🪙 <b id="coinsTop">0</b></span>
+      </div>
+
+    </header>
+
+
+    <main>
+
+      <!-- =========================
+           TELA INICIAL
+      ========================== -->
+
+      <section id="home" class="screen active">
+
+        <div class="hero">
+
+          <div class="hero-art">🧠</div>
+
+          <h1>Veja • Ligue • Aprenda</h1>
+
+          <p>
+            Aprenda palavras e conceitos
+            através de associações visuais.
+          </p>
+
+          <button
+            class="primary"
+            onclick="showScreen('categories')">
+            Começar
+          </button>
+
+        </div>
+
+
+        <!-- DESAFIO DO DIA -->
+
+        <div class="daily card">
+
+          <div>
+
+            <span class="eyebrow">
+              🎯 DESAFIO DO DIA
+            </span>
+
+            <h2>
+              Complete 3 desafios
+            </h2>
+
+            <p>
+              Ganhe +50 XP e +30 moedas.
+            </p>
+
+          </div>
+
+          <button
+            class="small-btn"
+            onclick="startDaily()">
+            Jogar
+          </button>
+
+        </div>
+
+
+        <h2 class="section-title">
+          Continuar aprendendo
+        </h2>
+
+
+        <div
+          id="homeCategories"
+          class="category-grid">
+        </div>
+
+      </section>
+
+
+
+      <!-- =========================
+           CATEGORIAS
+      ========================== -->
+
+      <section
+        id="categories"
+        class="screen">
+
+        <div class="screen-head">
+
+          <div>
+
+            <span class="eyebrow">
+              APRENDIZAGEM
+            </span>
+
+            <h1>
+              Categorias
+            </h1>
+
+          </div>
+
+          <span class="pill">
+            18 categorias
+          </span>
+
+        </div>
+
+
+        <div
+          id="categoryList"
+          class="category-list">
+        </div>
+
+      </section>
+
+
+
+      <!-- =========================
+           NÍVEIS
+      ========================== -->
+
+      <section
+        id="levels"
+        class="screen">
+
+        <button
+          class="back"
+          onclick="showScreen('categories')">
+
+          ‹ Categorias
+
+        </button>
+
+
+        <div id="levelHeader"></div>
+
+
+        <div
+          id="levelList"
+          class="level-list">
+        </div>
+
+      </section>
+
+
+
+      <!-- =========================
+           JOGO
+      ========================== -->
+
+      <section
+        id="game"
+        class="screen">
+
+        <div class="game-head">
+
+          <button
+            class="back"
+            onclick="showScreen('levels')">
+
+            ‹ Voltar
+
+          </button>
+
+
+          <span id="gameProgress">
+            1/5
+          </span>
+
+
+          <span>
+            ❤️❤️❤️
+          </span>
+
+        </div>
+
+
+        <!-- BARRA DE PROGRESSO -->
+
+        <div class="progress">
+
+          <div id="progressBar"></div>
+
+        </div>
+
+
+        <!-- PERGUNTA -->
+
+        <div id="question"></div>
+
+
+        <!-- RESPOSTAS -->
+
+        <div
+          id="answers"
+          class="answers">
+        </div>
+
+
+        <!-- MENSAGEM -->
+
+        <div
+          id="gameMessage"
+          class="game-message">
+        </div>
+
+
+        <!-- PRÓXIMA PERGUNTA -->
+
+        <button
+          id="nextBtn"
+          class="primary hidden"
+          onclick="nextQuestion()">
+
+          Continuar
+
+        </button>
+
+      </section>
+
+
+
+      <!-- =========================
+           RESULTADO
+      ========================== -->
+
+      <section
+        id="result"
+        class="screen">
+
+        <div class="result-card">
+
+          <div class="celebrate">
+            🎉
+          </div>
+
+
+          <h1 id="resultTitle">
+            Parabéns!
+          </h1>
+
+
+          <p id="resultText"></p>
+
+
+          <div class="reward-row">
+
+            <div>
+
+              ⭐
+
+              <b id="resultXP">
+                0
+              </b>
+
+              <small>
+                XP
+              </small>
+
+            </div>
+
+
+            <div>
+
+              🪙
+
+              <b id="resultCoins">
+                0
+              </b>
+
+              <small>
+                moedas
+              </small>
+
+            </div>
+
+          </div>
+
+
+          <button
+            class="primary"
+            onclick="showScreen('categories')">
+
+            Continuar
+
+          </button>
+
+
+          <button
+            class="secondary"
+            onclick="replayLevel()">
+
+            Rever
+
+          </button>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =========================
+           CONQUISTAS
+      ========================== -->
+
+      <section
+        id="achievements"
+        class="screen">
+
+        <div class="screen-head">
+
+          <div>
+
+            <span class="eyebrow">
+              PROGRESSO
+            </span>
+
+            <h1>
+              Conquistas
+            </h1>
+
+          </div>
+
+        </div>
+
+
+        <div
+          id="achievementList"
+          class="achievement-grid">
+        </div>
+
+      </section>
+
+
+
+      <!-- =========================
+           PERFIL
+      ========================== -->
+
+      <section
+        id="profile"
+        class="screen">
+
+
+        <div class="profile-card">
+
+          <div class="avatar">
+            👤
+          </div>
+
+
+          <h1>
+            Br 🇲🇿
+          </h1>
+
+
+          <p>
+            Nível
+            <b id="profileLevel">
+              1
+            </b>
+          </p>
+
+
+          <div class="xp-track">
+
+            <div id="profileXPBar"></div>
+
+          </div>
+
+
+          <small>
+
+            <span id="profileXP">
+              0
+            </span>
+
+            /
+
+            <span id="profileNextXP">
+              500
+            </span>
+
+            XP
+
+          </small>
+
+        </div>
+
+
+
+        <!-- ESTATÍSTICAS -->
+
+        <div class="profile-stats">
+
+          <div>
+
+            🔥
+
+            <b id="streak">
+              1
+            </b>
+
+            <small>
+              dias
+            </small>
+
+          </div>
+
+
+          <div>
+
+            🪙
+
+            <b id="profileCoins">
+              0
+            </b>
+
+            <small>
+              moedas
+            </small>
+
+          </div>
+
+
+          <div>
+
+            🏆
+
+            <b id="achievementCount">
+              0
+            </b>
+
+            <small>
+              conquistas
+            </small>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- OPÇÕES DO PERFIL -->
+
+        <div class="menu-card">
+
+          <button>
+
+            📊 Meu progresso
+
+            <span>
+              ›
+            </span>
+
+          </button>
+
+
+          <button>
+
+            🌍 Idioma principal
+
+            <span>
+              Português
+            </span>
+
+          </button>
+
+
+          <button>
+
+            ⚙️ Configurações
+
+            <span>
+              ›
+            </span>
+
+          </button>
+
+
+          <button>
+
+            ❓ Ajuda e suporte
+
+            <span>
+              ›
+            </span>
+
+          </button>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =========================
+           LOJA
+      ========================== -->
+
+      <section
+        id="shop"
+        class="screen">
+
+        <div class="screen-head">
+
+          <div>
+
+            <span class="eyebrow">
+              RECOMPENSAS
+            </span>
+
+            <h1>
+              Loja
+            </h1>
+
+          </div>
+
+
+          <span class="pill">
+
+            🪙
+
+            <b id="shopCoins">
+              0
+            </b>
+
+          </span>
+
+        </div>
+
+
+        <div
+          id="shopList"
+          class="shop-list">
+        </div>
+
+      </section>
+
+    </main>
+
+
+
+    <!-- =========================
+         MENU INFERIOR
+    ========================== -->
+
+    <nav class="bottom-nav">
+
+
+      <button
+        class="nav-btn active"
+        data-screen="home"
+        onclick="showScreen('home')">
+
+        ⌂
+
+        <small>
+          Início
+        </small>
+
+      </button>
+
+
+
+      <button
+        class="nav-btn"
+        data-screen="categories"
+        onclick="showScreen('categories')">
+
+        ▦
+
+        <small>
+          Categorias
+        </small>
+
+      </button>
+
+
+
+      <button
+        class="nav-btn"
+        data-screen="achievements"
+        onclick="showScreen('achievements')">
+
+        🏆
+
+        <small>
+          Conquistas
+        </small>
+
+      </button>
+
+
+
+      <button
+        class="nav-btn"
+        data-screen="shop"
+        onclick="showScreen('shop')">
+
+        🛒
+
+        <small>
+          Loja
+        </small>
+
+      </button>
+
+
+
+      <button
+        class="nav-btn"
+        data-screen="profile"
+        onclick="showScreen('profile')">
+
+        👤
+
+        <small>
+          Perfil
+        </small>
+
+      </button>
+
+    </nav>
+
+  </div>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script src="script.js"></script>
+
+</body>
+        </html>
