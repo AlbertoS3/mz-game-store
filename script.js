@@ -1,42 +1,21 @@
-/* =====================================================
-   LINKWORDS
-   Veja • Ligue • Aprenda
-===================================================== */
-
-
-/* =====================================================
-   CATEGORIAS E PERGUNTAS
-===================================================== */
+// ==========================================
+// LINKWORDS - SISTEMA PRINCIPAL
+// ==========================================
 
 const categories = [
-
   {
     id: "family",
     name: "Família",
     icon: "👨‍👩‍👧",
     levels: 12,
     desc: "Pessoas e relações familiares",
-
     questions: [
-
-      ["👩", "👨", "Mother + Father",
-        ["Parents", "Children", "Siblings", "Couple"], 0],
-
-      ["👧", "👦", "Daughter + Son",
-        ["Parents", "Children", "Friends", "Couple"], 1],
-
-      ["👧", "👦", "Sister + Brother",
-        ["Parents", "Siblings", "Children", "Spouses"], 1],
-
-      ["👵", "👴", "Grandmother + Grandfather",
-        ["Grandparents", "Parents", "Children", "Relatives"], 0],
-
-      ["👩‍🦰", "👨‍🦱", "Aunt + Uncle",
-        ["Siblings", "Relatives", "Parents", "Children"], 1]
-
+      ["👩", "👨", "Mother + Father", ["Parents", "Children", "Siblings", "Couple"], 0],
+      ["👧", "👦", "Daughter + Son", ["Parents", "Children", "Friends", "Couple"], 1],
+      ["👧", "👦", "Sister + Brother", ["Parents", "Siblings", "Children", "Spouses"], 1],
+      ["👵", "👴", "Grandmother + Grandfather", ["Grandparents", "Parents", "Children", "Friends"], 0]
     ]
   },
-
 
   {
     id: "home",
@@ -44,24 +23,12 @@ const categories = [
     icon: "🏠",
     levels: 10,
     desc: "Cômodos e objetos da casa",
-
     questions: [
-
-      ["🛏️", "🛋️", "Bed + Sofa",
-        ["Furniture", "Food", "Clothes", "Transport"], 0],
-
-      ["🍳", "🧊", "Stove + Refrigerator",
-        ["Bathroom", "Kitchen", "Bedroom", "Garden"], 1],
-
-      ["🚿", "🚽", "Shower + Toilet",
-        ["Kitchen", "Bathroom", "Garage", "Office"], 1],
-
-      ["📺", "🛋️", "TV + Sofa",
-        ["Living room", "Kitchen", "Garden", "Bedroom"], 0]
-
+      ["🛏️", "🛋️", "Bed + Sofa", ["Furniture", "Food", "Clothes", "Transport"], 0],
+      ["🍳", "🧊", "Stove + Refrigerator", ["Bathroom", "Kitchen", "Bedroom", "Garden"], 1],
+      ["🚿", "🚽", "Shower + Toilet", ["Kitchen", "Bathroom", "Garage", "Office"], 1]
     ]
   },
-
 
   {
     id: "clothes",
@@ -69,21 +36,12 @@ const categories = [
     icon: "👕",
     levels: 8,
     desc: "Peças e acessórios",
-
     questions: [
-
-      ["👕", "👖", "Shirt + Pants",
-        ["Clothes", "Food", "Furniture", "Sports"], 0],
-
-      ["👟", "🧦", "Shoes + Socks",
-        ["Footwear", "Outerwear", "Jewelry", "Tools"], 0],
-
-      ["🧥", "🧣", "Jacket + Scarf",
-        ["Clothes", "Outerwear", "Food", "Transport"], 1]
-
+      ["👕", "👖", "Shirt + Pants", ["Clothes", "Food", "Furniture", "Sports"], 0],
+      ["👟", "🧦", "Shoes + Socks", ["Footwear", "Food", "Furniture", "Sports"], 0],
+      ["🧥", "🧣", "Jacket + Scarf", ["Clothes", "Outerwear", "Food", "Transport"], 1]
     ]
   },
-
 
   {
     id: "food",
@@ -91,21 +49,12 @@ const categories = [
     icon: "🍎",
     levels: 9,
     desc: "Comidas, bebidas e utensílios",
-
     questions: [
-
-      ["🍎", "🍌", "Apple + Banana",
-        ["Vegetables", "Fruits", "Drinks", "Desserts"], 1],
-
-      ["🍚", "🫘", "Rice + Beans",
-        ["Food", "Furniture", "Clothes", "Animals"], 0],
-
-      ["🔪", "🍴", "Knife + Fork",
-        ["Cutlery", "Furniture", "Tools", "Sports"], 0]
-
+      ["🍎", "🍌", "Apple + Banana", ["Vegetables", "Fruits", "Drinks", "Desserts"], 1],
+      ["🍚", "🫘", "Rice + Beans", ["Food", "Furniture", "Clothes", "Animals"], 0],
+      ["🔪", "🍴", "Knife + Fork", ["Cutlery", "Furniture", "Tools", "Sports"], 0]
     ]
   },
-
 
   {
     id: "animals",
@@ -113,21 +62,12 @@ const categories = [
     icon: "🐾",
     levels: 7,
     desc: "Animais domésticos e selvagens",
-
     questions: [
-
-      ["🐶", "🐱", "Dog + Cat",
-        ["Pets", "Birds", "Farm animals", "Wild animals"], 0],
-
-      ["🐄", "🐐", "Cow + Goat",
-        ["Pets", "Farm animals", "Birds", "Insects"], 1],
-
-      ["🦁", "🐯", "Lion + Tiger",
-        ["Pets", "Farm animals", "Wild animals", "Sea animals"], 2]
-
+      ["🐶", "🐱", "Dog + Cat", ["Pets", "Birds", "Farm animals", "Wild animals"], 0],
+      ["🐄", "🐐", "Cow + Goat", ["Pets", "Farm animals", "Birds", "Insects"], 1],
+      ["🦁", "🐯", "Lion + Tiger", ["Pets", "Farm animals", "Wild animals", "Sea animals"], 2]
     ]
   },
-
 
   {
     id: "transport",
@@ -135,21 +75,12 @@ const categories = [
     icon: "🚗",
     levels: 6,
     desc: "Veículos e meios de transporte",
-
     questions: [
-
-      ["🚗", "🚌", "Car + Bus",
-        ["Vehicles", "Furniture", "Clothes", "Food"], 0],
-
-      ["✈️", "🚁", "Plane + Helicopter",
-        ["Aircraft", "Vehicles", "Ships", "Rail transport"], 0],
-
-      ["🚆", "🚇", "Train + Metro",
-        ["Water transport", "Rail transport", "Aircraft", "Road transport"], 1]
-
+      ["🚗", "🚌", "Car + Bus", ["Vehicles", "Furniture", "Clothes", "Food"], 0],
+      ["✈️", "🚁", "Plane + Helicopter", ["Aircraft", "Vehicles", "Ships", "Rail transport"], 0],
+      ["🚆", "🚇", "Train + Metro", ["Water transport", "Rail transport", "Aircraft", "Road transport"], 1]
     ]
   },
-
 
   {
     id: "jobs",
@@ -157,21 +88,12 @@ const categories = [
     icon: "👨‍⚕️",
     levels: 5,
     desc: "Trabalho e profissões",
-
     questions: [
-
-      ["👨‍⚕️", "👩‍⚕️", "Doctor + Nurse",
-        ["Education", "Healthcare workers", "Legal professionals", "Artists"], 1],
-
-      ["👨‍🏫", "🧑‍🎓", "Teacher + Student",
-        ["Education", "Transport", "Healthcare", "Sports"], 0],
-
-      ["👨‍⚖️", "👩‍⚖️", "Judge + Lawyer",
-        ["Healthcare", "Education", "Legal professionals", "Emergency services"], 2]
-
+      ["👨‍⚕️", "👩‍⚕️", "Doctor + Nurse", ["Education", "Healthcare workers", "Legal professionals", "Artists"], 1],
+      ["👨‍🏫", "🧑‍🎓", "Teacher + Student", ["Education", "Transport", "Healthcare", "Sports"], 0],
+      ["👨‍⚖️", "👩‍⚖️", "Judge + Lawyer", ["Healthcare", "Education", "Legal professionals", "Emergency services"], 2]
     ]
   },
-
 
   {
     id: "emotions",
@@ -179,21 +101,12 @@ const categories = [
     icon: "😊",
     levels: 4,
     desc: "Sentimentos e estados",
-
     questions: [
-
-      ["😄", "😁", "Happiness + Smile",
-        ["Joy", "Fear", "Anger", "Sadness"], 0],
-
-      ["😡", "😤", "Anger + Frustration",
-        ["Joy", "Negative emotions", "Love", "Calm"], 1],
-
-      ["❤️", "🤝", "Love + Trust",
-        ["Relationship", "Fear", "Anger", "Transport"], 0]
-
+      ["😄", "😁", "Happiness + Smile", ["Joy", "Fear", "Anger", "Sadness"], 0],
+      ["😡", "😤", "Anger + Frustration", ["Joy", "Negative emotions", "Love", "Calm"], 1],
+      ["❤️", "🤝", "Love + Trust", ["Relationship", "Fear", "Anger", "Transport"], 0]
     ]
   },
-
 
   {
     id: "geography",
@@ -201,18 +114,11 @@ const categories = [
     icon: "🌍",
     levels: 6,
     desc: "Lugares, natureza e mapas",
-
     questions: [
-
-      ["🌊", "🏞️", "River + Lake",
-        ["Buildings", "Bodies of water", "Vehicles", "Clothes"], 1],
-
-      ["🗺️", "🧭", "Map + Compass",
-        ["Navigation", "Food", "Sports", "Furniture"], 0]
-
+      ["🌊", "🏞️", "River + Lake", ["Buildings", "Bodies of water", "Vehicles", "Clothes"], 1],
+      ["🗺️", "🧭", "Map + Compass", ["Navigation", "Food", "Sports", "Furniture"], 0]
     ]
   },
-
 
   {
     id: "sports",
@@ -220,21 +126,12 @@ const categories = [
     icon: "⚽",
     levels: 5,
     desc: "Modalidades e equipamentos",
-
     questions: [
-
-      ["⚽", "🥅", "Ball + Goal",
-        ["Football", "Tennis", "Boxing", "Basketball"], 0],
-
-      ["🎾", "🏸", "Racket + Ball",
-        ["Tennis", "Football", "Swimming", "Boxing"], 0],
-
-      ["🏀", "⭕", "Hoop + Ball",
-        ["Basketball", "Football", "Hockey", "Tennis"], 0]
-
+      ["⚽", "🥅", "Ball + Goal", ["Football", "Tennis", "Boxing", "Basketball"], 0],
+      ["🎾", "🏸", "Racket + Ball", ["Tennis", "Football", "Swimming", "Boxing"], 0],
+      ["🏀", "⭕", "Hoop + Ball", ["Basketball", "Football", "Hockey", "Tennis"], 0]
     ]
   },
-
 
   {
     id: "technology",
@@ -242,21 +139,12 @@ const categories = [
     icon: "💻",
     levels: 6,
     desc: "Computadores, internet e dispositivos",
-
     questions: [
-
-      ["⌨️", "🖱️", "Keyboard + Mouse",
-        ["Computer peripherals", "Food", "Clothes", "Transport"], 0],
-
-      ["📱", "🌐", "Phone + Internet",
-        ["Smartphone", "Television", "Furniture", "Vehicle"], 0],
-
-      ["📷", "🎙️", "Camera + Microphone",
-        ["Media", "Kitchen", "Sports", "School"], 0]
-
+      ["⌨️", "🖱️", "Keyboard + Mouse", ["Computer peripherals", "Food", "Clothes", "Transport"], 0],
+      ["📱", "🌐", "Phone + Internet", ["Smartphone", "Television", "Furniture", "Vehicle"], 0],
+      ["📷", "🎙️", "Camera + Microphone", ["Media", "Kitchen", "Sports", "School"], 0]
     ]
   },
-
 
   {
     id: "school",
@@ -264,18 +152,11 @@ const categories = [
     icon: "🏫",
     levels: 6,
     desc: "Estudos e educação",
-
     questions: [
-
-      ["👩‍🏫", "🏫", "Teacher + Classroom",
-        ["School", "Hospital", "Airport", "Restaurant"], 0],
-
-      ["📚", "✏️", "Book + Pen",
-        ["Study", "Transport", "Food", "Music"], 0]
-
+      ["👩‍🏫", "🏫", "Teacher + Classroom", ["School", "Hospital", "Airport", "Restaurant"], 0],
+      ["📚", "✏️", "Book + Pen", ["Study", "Transport", "Food", "Music"], 0]
     ]
   },
-
 
   {
     id: "nature",
@@ -283,37 +164,23 @@ const categories = [
     icon: "🌳",
     levels: 7,
     desc: "Plantas, clima e ambiente",
-
     questions: [
-
-      ["🌳", "🌿", "Tree + Plant",
-        ["Nature", "Technology", "Transport", "Clothes"], 0],
-
-      ["☀️", "🌧️", "Sun + Rain",
-        ["Weather", "Animals", "Food", "Furniture"], 0]
-
+      ["🌳", "🌿", "Tree + Plant", ["Nature", "Technology", "Transport", "Clothes"], 0],
+      ["☀️", "🌧️", "Sun + Rain", ["Weather", "Animals", "Food", "Furniture"], 0]
     ]
   },
-
 
   {
     id: "body",
     name: "Corpo humano",
     icon: "🧍",
     levels: 8,
-    desc: "Partes do corpo e saúde",
-
+    desc: "Partes do corpo e sentidos",
     questions: [
-
-      ["👁️", "👂", "Eye + Ear",
-        ["Senses", "Clothes", "Transport", "Furniture"], 0],
-
-      ["🦷", "👅", "Teeth + Tongue",
-        ["Mouth", "Senses", "Food", "Tools"], 0]
-
+      ["👁️", "👂", "Eye + Ear", ["Senses", "Clothes", "Transport", "Furniture"], 0],
+      ["🦷", "👅", "Teeth + Tongue", ["Mouth", "Senses", "Food", "Tools"], 0]
     ]
   },
-
 
   {
     id: "music",
@@ -321,18 +188,11 @@ const categories = [
     icon: "🎵",
     levels: 5,
     desc: "Instrumentos e conceitos musicais",
-
     questions: [
-
-      ["🎸", "🥁", "Guitar + Drums",
-        ["Instruments", "Sports", "Transport", "Clothes"], 0],
-
-      ["🎤", "🎧", "Microphone + Headphones",
-        ["Music", "School", "Food", "Nature"], 0]
-
+      ["🎸", "🥁", "Guitar + Drums", ["Instruments", "Sports", "Transport", "Clothes"], 0],
+      ["🎤", "🎧", "Microphone + Headphones", ["Music", "School", "Food", "Nature"], 0]
     ]
   },
-
 
   {
     id: "city",
@@ -340,18 +200,11 @@ const categories = [
     icon: "🏙️",
     levels: 6,
     desc: "Lugares e serviços urbanos",
-
     questions: [
-
-      ["🏦", "🏪", "Bank + Shop",
-        ["City places", "Animals", "Sports", "Clothes"], 0],
-
-      ["🚦", "🛣️", "Traffic light + Road",
-        ["Transport", "City infrastructure", "Food", "School"], 1]
-
+      ["🏦", "🏪", "Bank + Shop", ["City places", "Animals", "Sports", "Clothes"], 0],
+      ["🚦", "🛣️", "Traffic light + Road", ["Transport", "City infrastructure", "Food", "School"], 1]
     ]
   },
-
 
   {
     id: "travel",
@@ -359,174 +212,134 @@ const categories = [
     icon: "✈️",
     levels: 7,
     desc: "Viagem, aeroporto e turismo",
-
     questions: [
-
-      ["🧳", "✈️", "Suitcase + Plane",
-        ["Travel", "School", "Food", "Sports"], 0],
-
-      ["🏨", "🗺️", "Hotel + Map",
-        ["Tourism", "Transport", "Nature", "Music"], 0]
-
+      ["🧳", "✈️", "Suitcase + Plane", ["Travel", "School", "Food", "Sports"], 0],
+      ["🏨", "🗺️", "Hotel + Map", ["Tourism", "Transport", "Nature", "Music"], 0]
     ]
   }
-
 ];
 
 
-/* =====================================================
-   ESTADO DO JOGADOR
-===================================================== */
+// ==========================================
+// ESTADO
+// ==========================================
 
-let state = JSON.parse(
-  localStorage.getItem("linkwords_state") || "null"
-);
+let state;
+
+try {
+  state = JSON.parse(localStorage.getItem("linkwords_state"));
+} catch (e) {
+  state = null;
+}
 
 if (!state) {
-
   state = {
     xp: 0,
     coins: 50,
     streak: 1,
     completed: [],
-    achievements: [],
-    daily: 0
+    achievements: []
   };
-
 }
 
-
-/* =====================================================
-   VARIÁVEIS DO JOGO
-===================================================== */
-
 let currentCategory = null;
-
 let currentQuestionIndex = 0;
-
 let currentQuestions = [];
-
+let currentLevel = 0;
 let score = 0;
 
-let lastLevel = null;
 
+// ==========================================
+// GUARDAR
+// ==========================================
 
-/* =====================================================
-   GUARDAR PROGRESSO
-===================================================== */
-
-function save() {
-
+function saveState() {
   localStorage.setItem(
     "linkwords_state",
     JSON.stringify(state)
   );
 
   updateStats();
-
 }
 
 
-/* =====================================================
-   ATUALIZAR ESTATÍSTICAS
-===================================================== */
+// ==========================================
+// ESTATÍSTICAS
+// ==========================================
 
 function updateStats() {
 
-  const xpTop =
-    document.querySelector("#xpTop");
+  const xpTop = document.getElementById("xpTop");
+  const coinsTop = document.getElementById("coinsTop");
 
-  const coinsTop =
-    document.querySelector("#coinsTop");
-
-  if (xpTop)
-    xpTop.textContent = state.xp;
-
-  if (coinsTop)
-    coinsTop.textContent = state.coins;
-
-
-  const profileCoins =
-    document.querySelector("#profileCoins");
-
-  if (profileCoins)
-    profileCoins.textContent = state.coins;
-
-
-  const shopCoins =
-    document.querySelector("#shopCoins");
-
-  if (shopCoins)
-    shopCoins.textContent = state.coins;
-
+  if (xpTop) xpTop.textContent = state.xp;
+  if (coinsTop) coinsTop.textContent = state.coins;
 
   const level =
     Math.floor(state.xp / 500) + 1;
 
-
-  const previousXP =
-    (level - 1) * 500;
-
-  const nextXP =
-    level * 500;
-
-
   const profileLevel =
-    document.querySelector("#profileLevel");
+    document.getElementById("profileLevel");
 
   if (profileLevel)
     profileLevel.textContent = level;
 
-
   const profileXP =
-    document.querySelector("#profileXP");
+    document.getElementById("profileXP");
 
   if (profileXP)
     profileXP.textContent = state.xp;
 
+  const nextXP = level * 500;
 
   const profileNextXP =
-    document.querySelector("#profileNextXP");
+    document.getElementById("profileNextXP");
 
   if (profileNextXP)
     profileNextXP.textContent = nextXP;
 
+  const previousXP = (level - 1) * 500;
 
-  const profileXPBar =
-    document.querySelector("#profileXPBar");
+  const percentage =
+    ((state.xp - previousXP) / 500) * 100;
 
-  if (profileXPBar) {
+  const bar =
+    document.getElementById("profileXPBar");
 
-    const percentage =
-      ((state.xp - previousXP) /
-      (nextXP - previousXP)) * 100;
-
-    profileXPBar.style.width =
-      Math.min(100, percentage) + "%";
-
-  }
-
+  if (bar)
+    bar.style.width =
+      Math.max(0, Math.min(100, percentage)) + "%";
 
   const streak =
-    document.querySelector("#streak");
+    document.getElementById("streak");
 
   if (streak)
     streak.textContent = state.streak;
 
-
   const achievementCount =
-    document.querySelector("#achievementCount");
+    document.getElementById("achievementCount");
 
   if (achievementCount)
     achievementCount.textContent =
       state.achievements.length;
 
+  const profileCoins =
+    document.getElementById("profileCoins");
+
+  if (profileCoins)
+    profileCoins.textContent = state.coins;
+
+  const shopCoins =
+    document.getElementById("shopCoins");
+
+  if (shopCoins)
+    shopCoins.textContent = state.coins;
 }
 
 
-/* =====================================================
-   TROCAR DE TELA
-===================================================== */
+// ==========================================
+// MUDAR DE TELA
+// ==========================================
 
 function showScreen(id) {
 
@@ -536,184 +349,160 @@ function showScreen(id) {
       screen.classList.remove("active");
     });
 
-
-  const screen =
+  const target =
     document.getElementById(id);
 
-  if (screen)
-    screen.classList.add("active");
+  if (!target) return;
 
+  target.classList.add("active");
 
   document
     .querySelectorAll(".nav-btn")
-    .forEach(button => {
+    .forEach(btn => {
 
-      button.classList.toggle(
-        "active",
-        button.dataset.screen === id
-      );
+      btn.classList.remove("active");
+
+      if (btn.dataset.screen === id) {
+        btn.classList.add("active");
+      }
 
     });
-
-
-  if (id === "categories")
-    renderCategories();
-
 
   if (id === "home")
     renderHome();
 
+  if (id === "categories")
+    renderCategories();
 
   if (id === "achievements")
     renderAchievements();
 
-
   if (id === "profile")
     updateStats();
-
 
   if (id === "shop")
     renderShop();
 
-
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-
+  window.scrollTo(0, 0);
 }
 
 
-/* =====================================================
-   TELA INICIAL
-===================================================== */
+// ==========================================
+// TELA INICIAL
+// ==========================================
 
 function renderHome() {
 
-  const box =
-    document.querySelector("#homeCategories");
+  const container =
+    document.getElementById("homeCategories");
 
-  if (!box)
-    return;
+  if (!container) return;
 
+  container.innerHTML = categories
+    .slice(0, 8)
+    .map(category => `
 
-  box.innerHTML =
-    categories
-      .slice(0, 9)
-      .map(category => `
+      <button
+        class="cat-tile"
+        onclick="openCategory('${category.id}')">
 
-        <button
-          class="cat-tile"
-          onclick="openCategory('${category.id}')">
+        <span class="emoji">
+          ${category.icon}
+        </span>
 
-          <span class="emoji">
-            ${category.icon}
-          </span>
+        <strong>
+          ${category.name}
+        </strong>
 
-          <strong>
-            ${category.name}
-          </strong>
+        <small>
+          ${category.levels} níveis
+        </small>
 
-          <small>
-            ${category.levels} níveis
-          </small>
+      </button>
 
-        </button>
-
-      `)
-      .join("");
-
+    `)
+    .join("");
 }
 
 
-/* =====================================================
-   LISTA DE CATEGORIAS
-===================================================== */
+// ==========================================
+// CATEGORIAS
+// ==========================================
 
 function renderCategories() {
 
-  const list =
-    document.querySelector("#categoryList");
+  const container =
+    document.getElementById("categoryList");
 
-  if (!list)
-    return;
+  if (!container) return;
 
+  container.innerHTML = categories
+    .map(category => `
 
-  list.innerHTML =
-    categories
-      .map(category => `
+      <button
+        class="category-item"
+        onclick="openCategory('${category.id}')">
 
-        <button
-          class="category-item"
-          onclick="openCategory('${category.id}')">
+        <span class="category-icon">
+          ${category.icon}
+        </span>
 
-          <span class="category-icon">
-            ${category.icon}
-          </span>
+        <span class="category-info">
 
-          <span class="category-info">
+          <h3>
+            ${category.name}
+          </h3>
 
-            <h3>
-              ${category.name}
-            </h3>
+          <p>
+            ${category.desc}
+          </p>
 
-            <p>
-              ${category.desc}
-              •
-              ${category.levels} níveis
-            </p>
+        </span>
 
-          </span>
+        <span class="arrow">
+          ›
+        </span>
 
-          <span class="arrow">
-            ›
-          </span>
+      </button>
 
-        </button>
-
-      `)
-      .join("");
-
+    `)
+    .join("");
 }
 
 
-/* =====================================================
-   ABRIR CATEGORIA
-===================================================== */
+// ==========================================
+// ABRIR CATEGORIA
+// ==========================================
 
 function openCategory(id) {
 
   currentCategory =
-    categories.find(
-      category => category.id === id
-    );
+    categories.find(cat => cat.id === id);
 
+  if (!currentCategory) return;
 
-  if (!currentCategory)
-    return;
+  const header =
+    document.getElementById("levelHeader");
 
-
-  const completedLevels =
+  const completed =
     state.completed.filter(
       item => item.startsWith(id + ":")
     ).length;
 
+  const percent =
+    (completed / currentCategory.levels) * 100;
 
-  const percentage =
-    Math.min(
-      100,
-      (completedLevels /
-      currentCategory.levels) * 100
-    );
-
-
-  document.querySelector("#levelHeader").innerHTML = `
+  header.innerHTML = `
 
     <div class="level-head">
 
-      <div style="font-size:42px">
+      <div class="level-icon">
         ${currentCategory.icon}
       </div>
+
+      <span class="eyebrow">
+        CATEGORIA
+      </span>
 
       <h1>
         ${currentCategory.name}
@@ -725,192 +514,157 @@ function openCategory(id) {
 
       <div class="level-progress">
 
-        <div
-          style="width:${percentage}%">
-        </div>
+        <div style="width:${percent}%"></div>
 
       </div>
+
+      <small>
+        ${completed}/${currentCategory.levels} níveis concluídos
+      </small>
 
     </div>
 
   `;
 
+  const list =
+    document.getElementById("levelList");
 
-  const levelList =
-    document.querySelector("#levelList");
-
-
-  levelList.innerHTML =
+  list.innerHTML =
     Array.from(
-      {
-        length: currentCategory.levels
-      },
-      (_, index) => {
+      { length: currentCategory.levels },
+      (_, i) => {
 
         const completed =
           state.completed.includes(
-            id + ":" + index
+            id + ":" + i
           );
-
 
         const unlocked =
-          index === 0 ||
+          i === 0 ||
           state.completed.includes(
-            id + ":" + (index - 1)
+            id + ":" + (i - 1)
           );
-
 
         return `
 
-          <div
-            class="level-item
+          <div class="level-item
             ${unlocked ? "" : "locked"}">
 
             <div class="level-number">
 
               ${
                 completed
-                  ? "✅"
+                  ? "✓"
                   : unlocked
-                    ? index + 1
+                    ? i + 1
                     : "🔒"
               }
 
             </div>
 
-
             <div class="level-info">
 
               <h3>
-                Nível ${index + 1}
+                Nível ${i + 1}
               </h3>
 
               <small>
-
                 ${
                   completed
                     ? "Concluído"
                     : unlocked
                       ? "Disponível"
-                      : "Complete o nível anterior"
+                      : "Bloqueado"
                 }
-
               </small>
 
             </div>
 
-
             ${
               unlocked
+                ? `
+                  <button
+                    class="play-btn"
+                    onclick="startLevel(${i})">
 
-              ?
+                    ${completed ? "Rever" : "Jogar"}
 
-              `<button
-                class="play-btn"
-                onclick="startLevel(${index})">
-
-                ${completed ? "Rever" : "Jogar"}
-
-              </button>`
-
-              :
-
-              ""
-
+                  </button>
+                `
+                : ""
             }
 
           </div>
 
         `;
-
       }
-    )
-    .join("");
-
+    ).join("");
 
   showScreen("levels");
-
 }
 
 
-/* =====================================================
-   INICIAR NÍVEL
-===================================================== */
+// ==========================================
+// INICIAR NÍVEL
+// ==========================================
 
-function startLevel(index) {
+function startLevel(level) {
 
-  if (!currentCategory)
-    return;
+  if (!currentCategory) return;
 
-
-  lastLevel = index;
-
+  currentLevel = level;
   currentQuestionIndex = 0;
-
   score = 0;
 
-
   currentQuestions =
-    [...currentCategory.questions];
-
+    currentCategory.questions;
 
   showScreen("game");
 
   renderQuestion();
-
 }
 
 
-/* =====================================================
-   MOSTRAR PERGUNTA
-===================================================== */
+// ==========================================
+// PERGUNTA
+// ==========================================
 
 function renderQuestion() {
 
   const question =
-    currentQuestions[
-      currentQuestionIndex
-    ];
+    currentQuestions[currentQuestionIndex];
 
+  if (!question) return;
 
-  if (!question)
-    return;
+  const progress =
+    document.getElementById("gameProgress");
 
-
-  document.querySelector(
-    "#gameProgress"
-  ).textContent =
+  progress.textContent =
     `${currentQuestionIndex + 1}/${currentQuestions.length}`;
 
+  const progressBar =
+    document.getElementById("progressBar");
 
-  document.querySelector(
-    "#progressBar"
-  ).style.width =
-    `${((currentQuestionIndex + 1) /
-    currentQuestions.length) * 100}%`;
+  progressBar.style.width =
+    ((currentQuestionIndex + 1) /
+      currentQuestions.length * 100) + "%";
 
 
-  document.querySelector("#question").innerHTML = `
+  document.getElementById("question").innerHTML = `
 
     <div class="question-card">
 
       <div class="question-title">
-        QUAL É O CONCEITO?
+        QUAL É A RELAÇÃO?
       </div>
 
       <div class="visuals">
 
-        <span>
-          ${question[0]}
-        </span>
+        <span>${question[0]}</span>
 
-        <b>
-          +
-        </b>
+        <b>+</b>
 
-        <span>
-          ${question[1]}
-        </span>
+        <span>${question[1]}</span>
 
       </div>
 
@@ -923,121 +677,100 @@ function renderQuestion() {
   `;
 
 
-  document.querySelector("#answers").innerHTML =
+  const answers =
+    document.getElementById("answers");
 
+  answers.innerHTML =
     question[3]
-      .map(
-        (answer, index) => `
+      .map((answer, index) => `
 
-          <button
-            class="answer"
-            onclick="answer(${index})">
+        <button
+          class="answer"
+          onclick="answerQuestion(${index})">
 
-            ${answer}
+          ${answer}
 
-          </button>
+        </button>
 
-        `
-      )
+      `)
       .join("");
 
 
-  document.querySelector(
-    "#gameMessage"
+  document.getElementById(
+    "gameMessage"
   ).textContent = "";
 
-
-  document.querySelector(
-    "#nextBtn"
-  ).classList.add("hidden");
-
+  document
+    .getElementById("nextBtn")
+    .classList.add("hidden");
 }
 
 
-/* =====================================================
-   RESPONDER
-===================================================== */
+// ==========================================
+// RESPONDER
+// ==========================================
 
-function answer(index) {
+function answerQuestion(index) {
 
   const question =
-    currentQuestions[
-      currentQuestionIndex
-    ];
+    currentQuestions[currentQuestionIndex];
 
+  const correct =
+    question[4];
 
   const buttons =
-    [
-      ...document.querySelectorAll(
-        ".answer"
-      )
-    ];
-
+    document.querySelectorAll(".answer");
 
   buttons.forEach(button => {
     button.disabled = true;
   });
 
+  if (index === correct) {
 
-  const correctIndex =
-    question[4];
-
-
-  buttons[
-    correctIndex
-  ].classList.add("correct");
-
-
-  if (index === correctIndex) {
+    buttons[index]
+      .classList.add("correct");
 
     score++;
 
-
-    document.querySelector(
-      "#gameMessage"
-    ).textContent =
-      "🎉 Correto! +20 XP";
-
-
     state.xp += 20;
-
     state.coins += 10;
 
-  }
+    document.getElementById(
+      "gameMessage"
+    ).textContent =
+      "🎉 Correto! +20 XP e +10 moedas";
 
-  else {
+  } else {
 
     buttons[index]
       .classList.add("wrong");
 
+    buttons[correct]
+      .classList.add("correct");
 
-    document.querySelector(
-      "#gameMessage"
+    document.getElementById(
+      "gameMessage"
     ).textContent =
-      "💡 A resposta é: " +
-      question[3][correctIndex];
+      "💡 A resposta correta é: " +
+      question[3][correct];
 
   }
 
+  saveState();
 
-  save();
-
-
-  document.querySelector(
-    "#nextBtn"
-  ).classList.remove("hidden");
-
+  document
+    .getElementById("nextBtn")
+    .classList.remove("hidden");
 }
 
 
-/* =====================================================
-   PRÓXIMA PERGUNTA
-===================================================== */
+// ==========================================
+// PRÓXIMA
+// ==========================================
 
 function nextQuestion() {
 
   currentQuestionIndex++;
-
 
   if (
     currentQuestionIndex >=
@@ -1046,45 +779,42 @@ function nextQuestion() {
 
     finishLevel();
 
-  }
-
-  else {
+  } else {
 
     renderQuestion();
 
   }
-
 }
 
 
-/* =====================================================
-   TERMINAR NÍVEL
-===================================================== */
+// ==========================================
+// TERMINAR NÍVEL
+// ==========================================
 
 function finishLevel() {
 
-  const id =
+  const key =
     currentCategory.id +
     ":" +
-    lastLevel;
+    currentLevel;
 
+  const already =
+    state.completed.includes(key);
 
-  const alreadyCompleted =
-    state.completed.includes(id);
+  let bonusXP = 0;
+  let bonusCoins = 0;
 
+  if (!already) {
 
-  if (!alreadyCompleted) {
+    state.completed.push(key);
 
-    state.completed.push(id);
+    bonusXP = 50;
+    bonusCoins = 20;
 
-    state.xp += 50;
-
-    state.coins += 20;
-
+    state.xp += bonusXP;
+    state.coins += bonusCoins;
   }
 
-
-  /* CONQUISTA: PERFEITO */
 
   if (
     score === currentQuestions.length &&
@@ -1096,8 +826,6 @@ function finishLevel() {
   }
 
 
-  /* CONQUISTA: EXPLORADOR */
-
   if (
     state.completed.length >= 10 &&
     !state.achievements.includes("explorer")
@@ -1107,8 +835,6 @@ function finishLevel() {
 
   }
 
-
-  /* CONQUISTA: APRENDIZ */
 
   if (
     state.xp >= 2000 &&
@@ -1120,143 +846,131 @@ function finishLevel() {
   }
 
 
-  save();
+  saveState();
 
 
-  document.querySelector(
-    "#resultText"
+  document.getElementById(
+    "resultText"
   ).textContent =
     `Você acertou ${score} de ${currentQuestions.length} desafios.`;
 
-
-  document.querySelector(
-    "#resultXP"
+  document.getElementById(
+    "resultXP"
   ).textContent =
-    score * 20 +
-    (alreadyCompleted ? 0 : 50);
+    (score * 20) + bonusXP;
 
-
-  document.querySelector(
-    "#resultCoins"
+  document.getElementById(
+    "resultCoins"
   ).textContent =
-    score * 10 +
-    (alreadyCompleted ? 0 : 20);
-
+    (score * 10) + bonusCoins;
 
   showScreen("result");
-
 }
 
 
-/* =====================================================
-   REPETIR NÍVEL
-===================================================== */
+// ==========================================
+// REPETIR
+// ==========================================
 
 function replayLevel() {
 
-  startLevel(lastLevel);
+  startLevel(currentLevel);
 
 }
 
 
-/* =====================================================
-   DESAFIO DIÁRIO
-===================================================== */
+// ==========================================
+// DESAFIO DO DIA
+// ==========================================
 
 function startDaily() {
 
-  openCategory("family");
+  currentCategory = categories[0];
 
-  startLevel(0);
+  currentLevel = 0;
 
+  currentQuestionIndex = 0;
+
+  score = 0;
+
+  currentQuestions =
+    currentCategory.questions;
+
+  showScreen("game");
+
+  renderQuestion();
 }
 
 
-====================================================
-   CONQUISTAS
-===================================================== */
+// ==========================================
+// CONQUISTAS
+// ==========================================
 
 function renderAchievements() {
 
-  const data = [
+  const container =
+    document.getElementById(
+      "achievementList"
+    );
 
-    [
-      "perfect",
-      "🧠",
-      "Mestre das conexões",
-      "Complete um nível sem errar"
-    ],
+  if (!container) return;
 
-    [
-      "explorer",
-      "🌍",
-      "Explorador",
-      "Complete 10 níveis"
-    ],
+  const achievements = [
 
-    [
-      "learner",
-      "🥇",
-      "Aprendiz",
-      "Alcance 2.000 XP"
-    ],
+    {
+      id: "perfect",
+      icon: "🧠",
+      title: "Mestre das conexões",
+      text: "Complete um nível sem errar"
+    },
 
-    [
-      "streak",
-      "🔥",
-      "Sequência",
-      "Jogue 7 dias seguidos"
-    ]
+    {
+      id: "explorer",
+      icon: "🌍",
+      title: "Explorador",
+      text: "Complete 10 níveis"
+    },
+
+    {
+      id: "learner",
+      icon: "🥇",
+      title: "Aprendiz",
+      text: "Alcance 2.000 XP"
+    }
 
   ];
 
-
-  const list =
-    document.querySelector(
-      "#achievementList"
-    );
-
-
-  if (!list)
-    return;
-
-
-  list.innerHTML =
-    data
+  container.innerHTML =
+    achievements
       .map(item => {
 
         const unlocked =
-          state.achievements
-            .includes(item[0]);
-
+          state.achievements.includes(
+            item.id
+          );
 
         return `
 
-          <div
-            class="achievement
+          <div class="achievement
             ${unlocked ? "done" : ""}">
 
             <div class="badge">
-              ${item[1]}
+              ${item.icon}
             </div>
 
             <h3>
-              ${item[2]}
+              ${item.title}
             </h3>
 
             <small>
-
-              ${
-                unlocked
-                  ? "🏆 Conquistada"
-                  : "🔒 Em progresso"
-              }
-
-              <br>
-
-              ${item[3]}
-
+              ${item.text}
             </small>
+
+            <p>
+              ${unlocked
+                ? "🏆 Conquistada"
+                : "🔒 Bloqueada"}
+            </p>
 
           </div>
 
@@ -1264,120 +978,96 @@ function renderAchievements() {
 
       })
       .join("");
-
 }
 
 
-/* =====================================================
-   LOJA
-===================================================== */
-
+// ==========================================
+// LOJA
+// ==========================================
 function renderShop() {
+
+  const container =
+    document.getElementById(
+      "shopList"
+    );
+
+  if (!container) return;
 
   const items = [
 
-    [
-      "❤️",
-      "Vida extra",
-      "+1 vida durante os desafios",
-      100
-    ],
+    {
+      icon: "❤️",
+      name: "Vida extra",
+      description: "Uma vida adicional",
+      price: 100
+    },
 
-    [
-      "💡",
-      "Dica",
-      "Revela uma pista",
-      50
-    ],
+    {
+      icon: "💡",
+      name: "Dica",
+      description: "Receba uma pista",
+      price: 50
+    },
 
-    [
-      "🔀",
-      "Eliminar resposta",
-      "Remove uma opção",
-      75
-    ],
+    {
+      icon: "❌",
+      name: "Eliminar resposta",
+      description: "Elimina uma opção",
+      price: 75
+    },
 
-    [
-      "⏱️",
-      "Tempo extra",
-      "Mais tempo no modo rápido",
-      80
-    ]
+    {
+      icon: "⏱️",
+      name: "Tempo extra",
+      description: "Ganhe mais tempo",
+      price: 80
+    }
 
   ];
 
+  container.innerHTML =
+    items.map((item, index) => `
 
-  const shop =
-    document.querySelector(
-      "#shopList"
-    );
+      <div class="shop-item">
 
+        <div class="shop-icon">
+          ${item.icon}
+        </div>
 
-  if (!shop)
-    return;
+        <div class="shop-info">
 
+          <h3>
+            ${item.name}
+          </h3>
 
-  shop.innerHTML =
-    items
-      .map(
-        (item, index) => `
+          <p>
+            ${item.description}
+          </p>
 
-          <div class="shop-item">
+        </div>
 
-            <div class="shop-icon">
-              ${item[0]}
-            </div>
+        <button
+          class="buy"
+          onclick="buyItem(${index})">
 
-            <div class="shop-info">
+          🪙 ${item.price}
 
-              <h3>
-                ${item[1]}
-              </h3>
+        </button>
 
-              <p>
-                ${item[2]}
-              </p>
+      </div>
 
-            </div>
-
-            <button
-              class="buy"
-              onclick="buyItem(${index})">
-
-              🪙 ${item[3]}
-
-            </button>
-
-          </div>
-
-        `
-      )
-      .join("");
-
+    `).join("");
 }
 
 
-/* =====================================================
-   COMPRAR ITEM
-===================================================== */
+// ==========================================
+// COMPRAR
+// ==========================================
 
 function buyItem(index) {
 
-  const prices = [
-    100,
-    50,
-    75,
-    80
-  ];
-
-
-  const names = [
-    "Vida extra",
-    "Dica",
-    "Eliminar resposta",
-    "Tempo extra"
-  ];
-
+  const prices =
+    [100, 50, 75, 80];
 
   if (
     state.coins <
@@ -1389,38 +1079,40 @@ function buyItem(index) {
     );
 
     return;
-
   }
-
 
   state.coins -=
     prices[index];
 
-
-  save();
-
+  saveState();
 
   alert(
-    names[index] +
-    " comprado!"
+    "Compra realizada com sucesso! 🪙"
   );
-
-
-  renderShop();
-
 }
 
 
-/* =====================================================
-   INICIALIZAÇÃO
-===================================================== */
+// ==========================================
+// INICIAR APP
+// ==========================================
 
-renderHome();
+function initApp() {
 
-renderCategories();
+  renderHome();
 
-renderAchievements();
+  renderCategories();
 
-renderShop();
+  renderAchievements();
 
-updateStats();
+  renderShop();
+
+  updateStats();
+
+  showScreen("home");
+}
+
+document.addEventListener(
+  "DOMContentLoaded",
+  initApp
+);
+2. Salva o arquivo
