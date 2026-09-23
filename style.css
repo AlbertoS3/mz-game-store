@@ -1,1 +1,761 @@
+* {
+  box-sizing: border-box;
+}
 
+body {
+  margin: 0;
+  background: #071b2d;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: 0;
+}
+
+/* =========================
+   TOPO
+========================= */
+
+.topbar {
+  height: 64px;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #071b2d;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid #18364d;
+}
+
+.brand {
+  font-size: 22px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+}
+
+.brand span span {
+  color: #ffd21c;
+}
+
+.logo {
+  font-size: 25px;
+}
+
+.stats {
+  display: flex;
+  gap: 12px;
+  font-size: 13px;
+}
+
+.stats span {
+  background: #102c43;
+  padding: 8px 10px;
+  border-radius: 16px;
+}
+
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+main {
+  max-width: 560px;
+  margin: auto;
+  padding: 14px 15px 100px;
+}
+
+.screen {
+  display: none;
+}
+
+.screen.active {
+  display: block;
+}
+
+
+/* =========================
+   TELA INICIAL
+========================= */
+
+.hero {
+  text-align: center;
+  padding: 25px 15px 20px;
+}
+
+.hero-art {
+  font-size: 72px;
+  margin: 10px auto;
+}
+
+.hero h1 {
+  font-size: 28px;
+  margin: 8px 0;
+  color: #ffd21c;
+}
+
+.hero p {
+  color: #b8c8d5;
+  line-height: 1.5;
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+.primary {
+  width: 100%;
+  padding: 14px 20px;
+  border-radius: 14px;
+  background: #ffd21c;
+  color: #071b2d;
+  font-weight: 800;
+  margin-top: 14px;
+}
+
+.secondary {
+  width: 100%;
+  padding: 13px 20px;
+  border-radius: 14px;
+  background: transparent;
+  color: #fff;
+  border: 1px solid #71889a;
+  margin-top: 9px;
+}
+
+.small-btn {
+  background: #18b96d;
+  color: white;
+  font-weight: 800;
+  padding: 10px 15px;
+  border-radius: 12px;
+}
+
+.back {
+  background: none;
+  color: #b8cad7;
+  padding: 6px 0;
+  margin-bottom: 8px;
+}
+
+
+/* =========================
+   DESAFIO DO DIA
+========================= */
+
+.card,
+.category-item,
+.level-item,
+.menu-card,
+.shop-item {
+  background: #102c43;
+  border: 1px solid #1e4560;
+  border-radius: 17px;
+}
+
+.daily {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  margin: 8px 0 24px;
+}
+
+.daily h2 {
+  font-size: 17px;
+  margin: 7px 0;
+}
+
+.daily p {
+  margin: 0;
+  color: #9fb2c2;
+  font-size: 13px;
+}
+
+.eyebrow {
+  font-size: 11px;
+  color: #ffd21c;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.section-title {
+  font-size: 18px;
+}
+
+
+/* =========================
+   CATEGORIAS DA HOME
+========================= */
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.cat-tile {
+  padding: 14px 8px;
+  border-radius: 15px;
+  text-align: center;
+  color: #fff;
+  min-height: 105px;
+  border: 1px solid #244a63;
+  background: #10334b;
+}
+
+.cat-tile .emoji {
+  font-size: 30px;
+  display: block;
+}
+
+.cat-tile strong {
+  display: block;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.cat-tile small {
+  color: #a9bac8;
+}
+
+
+/* =========================
+   CABEÇALHO DAS TELAS
+========================= */
+
+.screen-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0 18px;
+}
+
+.screen-head h1 {
+  margin: 4px 0;
+  font-size: 28px;
+}
+
+.pill {
+  background: #163850;
+  border-radius: 20px;
+  padding: 8px 11px;
+  font-size: 12px;
+}
+
+
+/* =========================
+   LISTA DE CATEGORIAS
+========================= */
+
+.category-list {
+  display: grid;
+  gap: 10px;
+}
+
+.category-item {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  color: white;
+  text-align: left;
+}
+
+.category-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 13px;
+  background: #173c55;
+  display: grid;
+  place-items: center;
+  font-size: 26px;
+}
+
+.category-info {
+  flex: 1;
+}
+
+.category-info h3 {
+  margin: 0 0 4px;
+  font-size: 16px;
+}
+
+.category-info p {
+  margin: 0;
+  color: #91a9b9;
+  font-size: 12px;
+}
+
+.arrow {
+  color: #ffd21c;
+  font-size: 22px;
+}
+
+
+/* =========================
+   NÍVEIS
+========================= */
+
+.level-head {
+  background: linear-gradient(
+    135deg,
+    #0d3651,
+    #126a7a
+  );
+
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+}
+
+.level-head h1 {
+  margin: 4px 0;
+}
+
+.level-head p {
+  color: #c5d7e2;
+  font-size: 13px;
+}
+
+.level-progress {
+  height: 7px;
+  background: #23475e;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.level-progress div {
+  height: 100%;
+  background: #ffd21c;
+  width: 0;
+}
+
+.level-item {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 9px;
+}
+
+.level-number {
+  font-size: 23px;
+  width: 36px;
+  text-align: center;
+}
+
+.level-info {
+  flex: 1;
+}
+
+.level-info h3 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.level-info small {
+  color: #91a9b9;
+}
+
+.play-btn {
+  background: #18b96d;
+  color: white;
+  padding: 9px 13px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.locked {
+  opacity: 0.55;
+}
+
+
+/* =========================
+   JOGO
+========================= */
+
+.game-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.game-head .back {
+  margin: 0;
+}
+
+.progress {
+  height: 7px;
+  background: #1b3b52;
+  border-radius: 10px;
+  margin: 8px 0 25px;
+  overflow: hidden;
+}
+
+.progress div {
+  height: 100%;
+  background: #ffd21c;
+  border-radius: 10px;
+  width: 20%;
+}
+
+
+/* CARTÃO DA PERGUNTA */
+
+.question-card {
+  text-align: center;
+  background: #102c43;
+  padding: 24px 14px;
+  border-radius: 20px;
+}
+
+.question-title {
+  color: #ffd21c;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.question-prompt {
+  font-size: 28px;
+  font-weight: 800;
+  margin: 15px 0;
+}
+
+.visuals {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  font-size: 58px;
+  margin: 20px 0;
+}
+
+
+/* RESPOSTAS */
+
+.answers {
+  display: grid;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.answer {
+  background: #fff;
+  color: #142838;
+  padding: 15px;
+  border-radius: 13px;
+  text-align: center;
+  font-weight: 800;
+}
+
+.answer:hover {
+  transform: scale(1.01);
+}
+
+.answer.correct {
+  background: #20bd73;
+  color: white;
+}
+
+.answer.wrong {
+  background: #ef5350;
+  color: white;
+}
+
+.game-message {
+  text-align: center;
+  min-height: 30px;
+  margin: 12px;
+  font-weight: 700;
+}
+
+.hidden {
+  display: none;
+}
+
+
+/* =========================
+   RESULTADO
+========================= */
+
+.result-card {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.celebrate {
+  font-size: 70px;
+}
+
+.result-card h1 {
+  color: #ffd21c;
+}
+
+.reward-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 25px 0;
+}
+
+.reward-row div {
+  background: #102c43;
+  border-radius: 15px;
+  padding: 14px 22px;
+  font-size: 20px;
+}
+
+.reward-row small {
+  display: block;
+  color: #8fa6b6;
+  font-size: 11px;
+}
+
+
+/* =========================
+   CONQUISTAS
+========================= */
+
+.achievement-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.achievement {
+  background: #102c43;
+  border: 1px solid #1e4560;
+  border-radius: 16px;
+  padding: 18px;
+  text-align: center;
+}
+
+.achievement .badge {
+  font-size: 40px;
+}
+
+.achievement h3 {
+  font-size: 13px;
+}
+
+.achievement small {
+  color: #8fa6b6;
+}
+
+.achievement.done {
+  border-color: #ffd21c;
+}
+
+
+/* =========================
+   PERFIL
+========================= */
+
+.profile-card {
+  text-align: center;
+  background: linear-gradient(
+    145deg,
+    #0d3048,
+    #123f56
+  );
+
+  padding: 25px;
+  border-radius: 20px;
+}
+
+.avatar {
+  font-size: 55px;
+}
+
+.profile-card h1 {
+  margin: 5px;
+}
+
+.profile-card p {
+  color: #b6c8d4;
+}
+
+.xp-track {
+  height: 9px;
+  background: #1e4a63;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 18px 0 7px;
+}
+
+.xp-track div {
+  height: 100%;
+  background: #ffd21c;
+  width: 0;
+}
+
+
+/* ESTATÍSTICAS */
+
+.profile-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.profile-stats div {
+  background: #102c43;
+  padding: 13px;
+  border-radius: 14px;
+  text-align: center;
+}
+
+.profile-stats small {
+  display: block;
+  color: #8fa6b6;
+  font-size: 10px;
+}
+
+
+/* MENU DO PERFIL */
+
+.menu-card {
+  overflow: hidden;
+}
+
+.menu-card button {
+  width: 100%;
+  background: transparent;
+  color: #fff;
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid #1c4158;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+/* =========================
+   LOJA
+========================= */
+
+.shop-list {
+  display: grid;
+  gap: 10px;
+}
+
+.shop-item {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.shop-icon {
+  font-size: 38px;
+}
+
+.shop-info {
+  flex: 1;
+}
+
+.shop-info h3 {
+  margin: 0 0 4px;
+}
+
+.shop-info p {
+  margin: 0;
+  color: #8fa6b6;
+  font-size: 12px;
+}
+
+.buy {
+  background: #ffd21c;
+  color: #071b2d;
+  padding: 9px 11px;
+  border-radius: 10px;
+  font-weight: 800;
+}
+
+
+/* =========================
+   MENU INFERIOR
+========================= */
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  height: 70px;
+
+  background: #061727;
+
+  border-top: 1px solid #1a3c52;
+
+  display: flex;
+  justify-content: center;
+
+  z-index: 20;
+}
+
+.nav-btn {
+  flex: 1;
+  max-width: 112px;
+
+  background: none;
+
+  color: #7f98a9;
+
+  font-size: 19px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 4px;
+}
+
+.nav-btn small {
+  font-size: 10px;
+}
+
+.nav-btn.active {
+  color: #ffd21c;
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (min-width: 700px) {
+
+  .bottom-nav {
+    max-width: 560px;
+    margin: auto;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .topbar {
+    padding-left: max(
+      16px,
+      calc((100% - 530px) / 2)
+    );
+
+    padding-right: max(
+      16px,
+      calc((100% - 530px) / 2)
+    );
+  }
+
+  }
