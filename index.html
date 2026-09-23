@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LinkWords — Aprenda todos os dias</title>
+
+    <meta name="description"
+          content="LinkWords — uma plataforma moderna para aprender palavras e conceitos de forma simples.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =====================================================
+     FUNDO GLOBAL
+===================================================== -->
+
+<div class="global-background"></div>
+
+
+<!-- =====================================================
+     SPLASH / CARREGAMENTO
+===================================================== -->
+
+<section id="splash-screen" class="splash-screen">
+
+    <div class="splash-background"></div>
+
+    <div class="splash-content">
+
+        <div class="logo-mark">
+            <span class="logo-link">L</span>
+            <span class="logo-word">W</span>
+        </div>
+
+        <h1>LinkWords</h1>
+
+        <p>Aprenda. Descubra. Conecte.</p>
+
+        <div class="loading-container">
+
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+
+            <span>Preparando seu aprendizado...</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     APP
+===================================================== -->
+
+<div id="app" class="app">
+
+
+    <!-- =================================================
+         HEADER
+    ================================================== -->
+
+    <header class="main-header">
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                <span>L</span>
+                <span>W</span>
+            </div>
+
+            <div class="brand-text">
+                <strong>LinkWords</strong>
+                <small>Aprendizado</small>
+            </div>
+
+        </div>
+
+
+        <div class="header-actions">
+
+            <button
+                class="header-button"
+                data-screen="categories"
+                aria-label="Pesquisar">
+
+                <span>⌕</span>
+
+            </button>
+
+
+            <button
+                class="profile-mini"
+                data-screen="profile"
+                aria-label="Abrir perfil">
+
+                <span>👤</span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =================================================
+         CONTEÚDO PRINCIPAL
+    ================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================================
+             HOME
+        ================================================== -->
+
+        <section id="home" class="screen active">
+
+            <div class="home-hero">
+
+                <div class="hero-image"></div>
+
+                <div class="hero-overlay"></div>
+
+                <div class="hero-content">
+
+                    <span class="hero-label">
+                        ✦ SEU ESPAÇO DE APRENDIZADO
+                    </span>
+
+                    <h1>
+                        Aprenda algo
+                        <br>
+                        <strong>novo hoje.</strong>
+                    </h1>
+
+                    <p>
+                        Explore palavras, conceitos e conhecimentos
+                        organizados para você aprender no seu ritmo.
+                    </p>
+
+                    <button
+                        class="primary-button hero-button"
+                        data-continue-learning>
+
+                        <span>Continuar aprendendo</span>
+                        <span class="button-arrow">→</span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROGRESSO -->
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="eyebrow">SEU PROGRESSO</span>
+                    <h2>Continue de onde parou</h2>
+                </div>
+
+            </div>
+
+
+            <div class="progress-card">
+
+                <div class="progress-card-icon">
+                    📚
+                </div>
+
+                <div class="progress-card-content">
+
+                    <div class="progress-card-top">
+
+                        <strong>Seu aprendizado</strong>
+
+                        <span
+                            data-profile-progress>
+                            0%
+                        </span>
+
+                    </div>
+
+                    <div class="progress-bar">
+
+                        <div
+                            class="progress-bar-fill"
+                            data-profile-progress-bar
+                            style="width: 0%;">
+                        </div>
+
+                    </div>
+
+                    <small>
+                        Continue explorando para aumentar seu progresso.
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- CATEGORIAS EM DESTAQUE -->
+
+            <div class="section-heading section-heading-margin">
+
+                <div>
+                    <span class="eyebrow">EXPLORE</span>
+                    <h2>Áreas de aprendizado</h2>
+                </div>
+
+                <button
+                    class="text-button"
+                    data-open-categories>
+
+                    Ver todas →
+                </button>
+
+            </div>
+
+
+            <div
+                class="featured-categories"
+                data-categories-container>
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CATEGORIAS
+        ================================================== -->
+
+        <section id="categories" class="screen">
+
+            <div class="page-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        APRENDIZADO
+                    </span>
+
+                    <h1>Explore categorias</h1>
+
+                    <p>
+                        Escolha uma área e comece a aprender.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PESQUISA -->
+
+            <div class="search-box">
+
+                <span class="search-icon">⌕</span>
+
+                <input
+                    type="search"
+                    data-search
+                    placeholder="Pesquisar categoria..."
+                    autocomplete="off">
+
+            </div>
+
+
+            <!-- RESULTADOS DA PESQUISA -->
+
+            <div
+                class="search-results"
+                data-search-results>
+            </div>
+
+
+            <!-- CATEGORIAS -->
+
+            <div
+                class="categories-grid"
+                data-categories-container>
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             LIÇÕES / NÍVEIS
+        ================================================== -->
+
+        <section id="levels" class="screen">
+
+            <button
+                class="back-button"
+                data-back="categories">
+
+                ← Voltar
+            </button>
+
+
+            <div class="category-header">
+
+                <div class="category-header-icon">
+                    <span data-category-icon>📚</span>
+                </div>
+
+                <div>
+
+                    <span class="eyebrow">
+                        CATEGORIA
+                    </span>
+
+                    <h1 data-category-title>
+                        Categoria
+                    </h1>
+
+                    <p data-category-description>
+                        Escolha uma lição para começar.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="lessons-title">
+
+                <span class="eyebrow">
+                    CONTEÚDO
+                </span>
+
+                <h2>Lições disponíveis</h2>
+
+            </div>
+
+
+            <div
+                class="lessons-list"
+                data-lessons-container>
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ÁREA DE APRENDIZADO
+             OBS: O ID "game" é mantido porque o script.js
+             atual utiliza esse ID. Visualmente NÃO é um jogo.
+        ================================================== -->
+
+        <section id="game" class="screen">
+
+            <button
+                class="back-button"
+                data-back="levels">
+
+                ← Voltar às lições
+            </button>
+
+
+            <div class="learning-header">
+
+                <span class="eyebrow">
+                    APRENDENDO
+                </span>
+
+                <h1 data-lesson-title>
+                    Lição
+                </h1>
+
+                <p data-lesson-description>
+                    Aprenda novos conceitos.
+                </p>
+
+            </div>
+
+
+            <!-- PROGRESSO DA LIÇÃO -->
+
+            <div class="lesson-progress">
+
+                <div class="lesson-progress-top">
+
+                    <span>
+                        Progresso da lição
+                    </span>
+
+                    <span>
+                        <strong data-current-word>1</strong>
+                        /
+                        <span data-total-words>1</span>
+                    </span>
+
+                </div>
+
+                <div class="progress-bar">
+
+                    <div
+                        class="progress-bar-fill"
+                        data-lesson-progress
+                        style="width: 0%;">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARTÃO DE APRENDIZADO -->
+
+            <article class="learning-card">
+
+                <div class="learning-card-decoration"></div>
+
+                <div class="learning-card-content">
+
+                    <span class="learning-label">
+                        PALAVRA / CONCEITO
+                    </span>
+
+                    <h2 data-word>
+                        Palavra
+                    </h2>
+
+                    <div class="learning-divider"></div>
+
+                    <span class="definition-label">
+                        SIGNIFICADO
+                    </span>
+
+                    <p data-definition>
+                        A definição aparecerá aqui.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- NAVEGAÇÃO DA LIÇÃO -->
+
+            <div class="learning-navigation">
+
+                <button
+                    class="secondary-button"
+                    data-previous>
+
+                    ← Anterior
+
+                </button>
+
+
+                <button
+                    class="primary-button"
+                    data-next>
+
+                    <span>Próximo</span>
+
+                    <span class="button-arrow">
+                        →
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <div class="learning-tip">
+
+                <span>💡</span>
+
+                <p>
+                    Leia com calma e avance quando estiver
+                    pronto para o próximo conceito.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             RESULTADO / LIÇÃO CONCLUÍDA
+        ================================================== -->
+
+        <section id="result" class="screen">
+
+            <div class="result-page">
+
+                <div class="result-icon">
+                    ✓
+                </div>
+
+                <span class="eyebrow">
+                    LIÇÃO CONCLUÍDA
+                </span>
+
+                <h1 data-result-title>
+                    Muito bem!
+                </h1>
+
+                <p data-result-message>
+                    Você concluiu esta lição.
+                </p>
+
+
+                <div class="result-category-card">
+
+                    <span class="result-small-label">
+                        CATEGORIA
+                    </span>
+
+                    <strong data-result-category>
+                        Categoria
+                    </strong>
+
+                </div>
+
+
+                <button
+                    class="primary-button result-button"
+                    data-continue>
+
+                    Continuar aprendendo
+                    <span>→</span>
+
+                </button>
+
+
+                <button
+                    class="secondary-button result-secondary"
+                    data-back="categories">
+
+                    Explorar categorias
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PERFIL
+        ================================================== -->
+
+        <section id="profile" class="screen">
+
+            <div class="profile-hero">
+
+                <div class="profile-avatar">
+                    👤
+                </div>
+
+                <div>
+
+                    <span class="eyebrow">
+                        MEU PERFIL
+                    </span>
+
+                    <h1>
+                        Meu aprendizado
+                    </h1>
+
+                    <p>
+                        Acompanhe sua evolução no LinkWords.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROGRESSO -->
+
+            <div class="profile-progress-card">
+
+                <div class="profile-progress-header">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            PROGRESSO TOTAL
+                        </span>
+
+                        <h2 data-profile-progress>
+                            0%
+                        </h2>
+
+                    </div>
+
+                    <div class="profile-progress-icon">
+                        📈
+                    </div>
+
+                </div>
+
+
+                <div class="progress-bar large">
+
+                    <div
+                        class="progress-bar-fill"
+                        data-profile-progress-bar
+                        style="width: 0%;">
+                    </div>
+
+                </div>
+
+                <p>
+                    Continue estudando para completar
+                    mais lições.
+                </p>
+
+            </div>
+
+
+            <!-- ESTATÍSTICAS -->
+
+            <div class="profile-stats">
+
+                <div class="stat-card">
+
+                    <span class="stat-icon">
+                        📖
+                    </span>
+
+                    <strong data-completed-count>
+                        0
+                    </strong>
+
+                    <small>
+                        Lições concluídas
+                    </small>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-icon">
+                        🧠
+                    </span>
+
+                    <strong>
+                        0
+                    </strong>
+
+                    <small>
+                        Conceitos aprendidos
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- INFORMAÇÃO -->
+
+            <div class="profile-info">
+
+                <div class="profile-info-icon">
+                    ✦
+                </div>
+
+                <div>
+
+                    <strong>
+                        Aprender é uma jornada
+                    </strong>
+
+                    <p>
+                        Volte todos os dias para descobrir
+                        novos conhecimentos.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =================================================
+         NAVEGAÇÃO INFERIOR
+    ================================================== -->
+
+    <nav class="bottom-navigation">
+
+        <button
+            class="nav-item active"
+            data-screen="home">
+
+            <span class="nav-icon">
+                ⌂
+            </span>
+
+            <span>
+                Início
+            </span>
+
+        </button>
+
+
+        <button
+            class="nav-item"
+            data-screen="categories">
+
+            <span class="nav-icon">
+                ◈
+            </span>
+
+            <span>
+                Categorias
+            </span>
+
+        </button>
+
+
+        <button
+            class="nav-item"
+            data-screen="profile">
+
+            <span class="nav-icon">
+                ◯
+            </span>
+
+            <span>
+                Perfil
+            </span>
+
+        </button>
+
+    </nav>
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="script.js"></script>
+
+</body>
+                          </html>
