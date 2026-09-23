@@ -984,12 +984,10 @@ function renderAchievements() {
 // ==========================================
 // LOJA
 // ==========================================
+
 function renderShop() {
 
-  const container =
-    document.getElementById(
-      "shopList"
-    );
+  const container = document.getElementById("shopList");
 
   if (!container) return;
 
@@ -998,105 +996,135 @@ function renderShop() {
     {
       icon: "❤️",
       name: "Vida extra",
-      description: "Uma vida adicional",
+      description: "Uma vida adicional nos desafios",
       price: 100
     },
 
     {
       icon: "💡",
       name: "Dica",
-      description: "Receba uma pista",
+      description: "Revela uma pista durante o jogo",
       price: 50
     },
 
     {
-      icon: "❌",
-      name: "Eliminar resposta",
-      description: "Elimina uma opção",
-      price: 75
+      icon: "⚡",
+      name: "XP Boost",
+      description: "Receba 100 XP imediatamente",
+      price: 150
     },
 
     {
-      icon: "⏱️",
-      name: "Tempo extra",
-      description: "Ganhe mais tempo",
-      price: 80
+      icon: "🔥",
+      name: "Sequência",
+      description: "Aumenta sua sequência",
+      price: 200
     }
 
   ];
 
-  container.innerHTML =
-    items.map((item, index) => `
+  container.innerHTML = items.map((item, index) => `
 
-      <div class="shop-item">
+    <div class="shop-item">
 
-        <div class="shop-icon">
-          ${item.icon}
-        </div>
+      <div class="shop-icon">
+        ${item.icon}
+      </div>
 
-        <div class="shop-info">
+      <div class="shop-info">
 
-          <h3>
-            ${item.name}
-          </h3>
+        <h3>
+          ${item.name}
+        </h3>
 
-          <p>
-            ${item.description}
-          </p>
-
-        </div>
-
-        <button
-          class="buy"
-          onclick="buyItem(${index})">
-
-          🪙 ${item.price}
-
-        </button>
+        <p>
+          ${item.description}
+        </p>
 
       </div>
 
-    `).join("");
+      <button
+        class="buy-btn"
+        onclick="buyItem(${index})">
+
+        🪙 ${item.price}
+
+      </button>
+
+    </div>
+
+  `).join("");
 }
 
 
 // ==========================================
-// COMPRAR
+// COMPRAR ITEM
 // ==========================================
 
 function buyItem(index) {
 
-  const prices =
-    [100, 50, 75, 80];
+  const items = [
 
-  if (
-    state.coins <
-    prices[index]
-  ) {
+    {
+      name: "Vida extra",
+      price: 100
+    },
+
+    {
+      name: "Dica",
+      price: 50
+    },
+
+    {
+      name: "XP Boost",
+      price: 150
+    },
+
+    {
+      name: "Sequência",
+      price: 200
+    }
+
+  ];
+
+  const item = items[index];
+
+  if (!item) return;
+
+  if (state.coins < item.price) {
 
     alert(
-      "Você não tem moedas suficientes."
+      "🪙 Você não tem moedas suficientes."
     );
 
     return;
   }
 
-  state.coins -=
-    prices[index];
+  state.coins -= item.price;
+
+  if (item.name === "XP Boost") {
+    state.xp += 100;
+  }
 
   saveState();
 
+  renderShop();
+
   alert(
-    "Compra realizada com sucesso! 🪙"
+    "✅ Você comprou: " + item.name
   );
 }
 
 
 // ==========================================
-// INICIAR APP
+// INICIALIZAÇÃO DO APP
 // ==========================================
 
 function initApp() {
+
+  console.log("LinkWords iniciado");
+
+  updateStats();
 
   renderHome();
 
@@ -1106,13 +1134,15 @@ function initApp() {
 
   renderShop();
 
-  updateStats();
-
   showScreen("home");
 }
+
+
+// ==========================================
+// INICIAR QUANDO A PÁGINA CARREGAR
+// ==========================================
 
 document.addEventListener(
   "DOMContentLoaded",
   initApp
 );
-2. Salva o arquivo
